@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 356316906}
   - component: {fileID: 356316905}
   - component: {fileID: 356316909}
+  - component: {fileID: 356316910}
   m_Layer: 0
   m_Name: SoundBait
   m_TagString: Untagged
@@ -556,6 +557,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd050575b7804fe4585ae6b28710ea15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &356316910
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356316904}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &462909763
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +929,7 @@ GameObject:
   - component: {fileID: 943590388}
   - component: {fileID: 943590387}
   - component: {fileID: 943590386}
+  - component: {fileID: 943590391}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1010,6 +1039,33 @@ Transform:
   - {fileID: 173707124}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &943590391
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943590385}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1030269353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,9 +1864,9 @@ GameObject:
   - component: {fileID: 1737909178}
   - component: {fileID: 1737909177}
   - component: {fileID: 1737909176}
-  - component: {fileID: 1737909175}
   - component: {fileID: 1737909174}
   - component: {fileID: 1737909181}
+  - component: {fileID: 1737909182}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Agent
@@ -1845,28 +1901,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!195 &1737909175
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737909173}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &1737909176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,7 +1908,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737909173}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cabd9e839e92aa04f814d76e69e6a672, type: 3}
   m_Name: 
@@ -1883,9 +1917,15 @@ MonoBehaviour:
   chaseRange: 6
   idleTimeThreshold: 10
   wanderTimeThreshold: 20
-  waypoints: []
-  idlePoint: {fileID: 0}
-  enemy: {fileID: 0}
+  waypoints:
+  - {fileID: 462909767}
+  - {fileID: 1673426838}
+  - {fileID: 1753083218}
+  - {fileID: 2006332596}
+  - {fileID: 768254833}
+  - {fileID: 246464272}
+  idlePoint: {fileID: 169562807}
+  enemy: {fileID: 943590390}
 --- !u!136 &1737909177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1982,7 +2022,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737909173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51d6e2710095a434a9ad9d82ddb0acd9, type: 3}
   m_Name: 
@@ -2000,6 +2040,28 @@ MonoBehaviour:
     m_Bits: 0
   eyes: {fileID: 1561661241}
   waitTime: 2
+--- !u!195 &1737909182
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737909173}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1753083214
 GameObject:
   m_ObjectHideFlags: 0

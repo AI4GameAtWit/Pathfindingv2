@@ -9,6 +9,8 @@ public class SoundTrigger : MonoBehaviour
         foreach (var hit in listeners)
         {
             Perception_AgentController ai = hit.GetComponent<Perception_AgentController>();
+            //AIController ai = hit.GetComponent<Perception_AgentController>();
+
             if (ai != null)
             {
                 ai.HearNoise(transform.position);
